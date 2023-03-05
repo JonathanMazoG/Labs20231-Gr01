@@ -43,40 +43,40 @@
         android:id="@+id/sexo_m_radiobutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginTop="120dp"
         android:text="Hombre"
         app:layout_constraintEnd_toStartOf="@+id/sexo_f_radiobutton2"
-        app:layout_constraintStart_toEndOf="@+id/sexo_textview"
-        tools:layout_editor_absoluteY="152dp" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <RadioButton
         android:id="@+id/sexo_f_radiobutton2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginEnd="243dp"
+        android:layout_marginTop="120dp"
         android:text="Mujer"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/sexo_m_radiobutton"
-        tools:layout_editor_absoluteY="152dp" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/sexo_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="242dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginTop="135dp"
+        android:layout_marginEnd="10dp"
         android:text="Sexo"
         app:layout_constraintEnd_toStartOf="@+id/sexo_m_radiobutton"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="171dp" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/fechanacimiento_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="243dp"
-        android:layout_marginTop="160dp"
+        android:layout_marginTop="28dp"
         android:layout_marginEnd="10dp"
         android:text="Fecha de nacimiento"
         app:layout_constraintEnd_toStartOf="@+id/fechanacimiento_datepicker"
@@ -98,9 +98,10 @@
         android:id="@+id/gradoescolaridad_spinner"
         android:layout_width="321dp"
         android:layout_height="34dp"
-        android:layout_marginStart="40dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="44dp"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="264dp" />
+        app:layout_constraintTop_toBottomOf="@+id/fechanacimiento_textview" />
 
     <Button
         android:id="@+id/siguiente_button"
