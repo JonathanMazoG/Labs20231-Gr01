@@ -84,7 +84,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="55dp"
-        android:layout_marginTop="31dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
         android:text="Sexo"
         app:layout_constraintEnd_toStartOf="@+id/sexo_m_radiobutton"
