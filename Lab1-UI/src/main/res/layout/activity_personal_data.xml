@@ -7,17 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".PersonalDataActivity">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:popupTheme="@style/Theme.Labs20231Gr01.PopupOverlay" />
-
     <EditText
         android:id="@+id/nombres_edittext"
         android:layout_width="324dp"
@@ -33,7 +22,7 @@
         app:layout_constraintBottom_toTopOf="@+id/apellidos_edittext"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/apellidos_edittext"
