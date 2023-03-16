@@ -1,34 +1,76 @@
 package co.edu.udea.compumovil.gr01_20231.lab1
 
+import android.app.DatePickerDialog
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
+import android.util.Log
+import android.view.View
+import android.widget.*
+
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
-import co.edu.udea.compumovil.gr01_20231.lab1.databinding.ActivityPersonalDataBinding
+
+import java.util.*
 
 class PersonalDataActivity : AppCompatActivity() {
 
-    private lateinit var appBarConfiguration: AppBarConfiguration
-    private lateinit var binding: ActivityPersonalDataBinding
+    private lateinit var nombresEditText: EditText
+    private lateinit var apellidosEditText: EditText
+    private lateinit var sexoRadioGroup: RadioGroup
+    private lateinit var sexoMRadioButton: RadioButton
+    private lateinit var sexoFRadioButton: RadioButton
+    private lateinit var fechaNacimientoEditText: EditText
+    private lateinit var gradoEscolaridadSpinner: Spinner
+    private lateinit var siguienteButton: Button
+
+    private var nombres: String = ""
+    private var apellidos: String = ""
+    private var sexo: String = ""
+    private var fechaNacimiento: String = ""
+    private var gradoEscolaridad: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_personal_data)
 
-        binding = ActivityPersonalDataBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        nombresEditText = findViewById(R.id.nombres_edittext)
+        apellidosEditText = findViewById(R.id.apellidos_edittext)
+        sexoRadioGroup = findViewById(R.id.sexo_radiogroup)
+        sexoMRadioButton = findViewById(R.id.sexo_m_radiobutton)
+        sexoFRadioButton = findViewById(R.id.sexo_f_radiobutton)
+        fechaNacimientoEditText = findViewById(R.id.fechanacimiento_edittext)
+        gradoEscolaridadSpinner = findViewById(R.id.gradoescolaridad_spinner)
+        siguienteButton = findViewById(R.id.siguiente_button)
 
-        val navController = findNavController(R.id.nav_host_fragment_content_personal_data)
-        appBarConfiguration = AppBarConfiguration(navController.graph)
-        setupActionBarWithNavController(navController, appBarConfiguration)
+        fechaNacimientoEditText.setOnClickListener {
+            val cal = Calendar.getInstance()
+            val year = cal.get(Calendar.YEAR)
+            val month = cal.get(Calendar.MONTH)
+            val day = cal.get(Calendar.DAY_OF_MONTH)
 
-    }
+            val datePickerDialog = DatePickerDialog(
+                this,
+                { _, y, m, d ->
+                    val dateStr = String.format(Locale.getDefault(), "%02d/%02d/%04d", d, m + 1, y)
+                    fechaNacimientoEditText.setText(dateStr)
+                },
+                year,
+                month,
+                day
+            )
+            datePickerDialog.show()
+        }
 
-    override fun onSupportNavigateUp(): Boolean {
-        val navController = findNavController(R.id.nav_host_fragment_content_personal_data)
-        return navController.navigateUp(appBarConfiguration)
-                || super.onSupportNavigateUp()
+        siguienteButton.setOnClickListener {
+            nombres = nombresEditText.text.toString()
+            apellidos = apellidosEditText.text.toString()
+            when (sexoRadioGroup.checkedRadioButtonId) {
+                R.id.sexo_m_radiobutton -> sexo = "Hombre"
+                R.id.sexo_f_radiobutton -> sexo = "Mujer"
+            }
+            fechaNacimiento = fechaNacimientoEditText.text.toString()
+            gradoEscolaridad = gradoEscolaridadSpinner.selectedItem.toString()
+
+            val datos = listOf(nombres, apellidos, sexo, fechaNacimiento, gradoEscolaridad)
+            Log.d("PersonalDataActivity", datos.joinToString(", "))
+        }
     }
 }

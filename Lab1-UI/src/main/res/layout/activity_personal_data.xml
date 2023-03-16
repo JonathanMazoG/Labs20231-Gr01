@@ -39,26 +39,26 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-    <RadioButton
-        android:id="@+id/sexo_m_radiobutton"
+    <RadioGroup
+        android:id="@+id/sexo_radiogroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="Hombre"
-        app:layout_constraintEnd_toStartOf="@+id/sexo_f_radiobutton2"
+        android:orientation="horizontal"
         app:layout_constraintStart_toEndOf="@+id/sexo_textview"
-        app:layout_constraintTop_toBottomOf="@+id/apellidos_edittext" />
+        app:layout_constraintTop_toBottomOf="@+id/apellidos_edittext">
 
-    <RadioButton
-        android:id="@+id/sexo_f_radiobutton2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
-        android:text="Mujer"
-        app:layout_constraintStart_toEndOf="@+id/sexo_m_radiobutton"
-        app:layout_constraintTop_toBottomOf="@+id/apellidos_edittext" />
+        <RadioButton
+            android:id="@+id/sexo_m_radiobutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hombre" />
+
+        <RadioButton
+            android:id="@+id/sexo_f_radiobutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mujer" />
+    </RadioGroup>
 
     <TextView
         android:id="@+id/sexo_textview"
@@ -68,9 +68,10 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="11dp"
         android:text="Sexo"
-        app:layout_constraintEnd_toStartOf="@+id/sexo_m_radiobutton"
+        app:layout_constraintEnd_toStartOf="@+id/sexo_radiogroup"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/apellidos_edittext" />
+
 
     <TextView
         android:id="@+id/fechanacimiento_textview"
@@ -80,9 +81,9 @@
         android:layout_marginTop="31dp"
         android:layout_marginEnd="10dp"
         android:text="Fecha de nacimiento"
-        app:layout_constraintEnd_toStartOf="@+id/fechanacimiento_datepicker"
+        app:layout_constraintEnd_toStartOf="@+id/fechanacimiento_edittext"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sexo_m_radiobutton" />
+        app:layout_constraintTop_toBottomOf="@+id/sexo_radiogroup" />
 
     <EditText
         android:id="@+id/fechanacimiento_edittext"
@@ -95,7 +96,7 @@
         android:inputType="none"
         android:focusable="false"
         app:layout_constraintStart_toEndOf="@+id/fechanacimiento_textview"
-        app:layout_constraintTop_toBottomOf="@+id/sexo_f_radiobutton2" />
+        app:layout_constraintTop_toBottomOf="@+id/sexo_radiogroup" />
 
 
 
