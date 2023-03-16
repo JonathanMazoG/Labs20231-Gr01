@@ -16,7 +16,7 @@
         android:autoText="true"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Nombres"
+        android:text="@string/nombre"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -29,7 +29,7 @@
         android:autoText="true"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Apellidos"
+        android:text="@string/apellido"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -85,24 +85,29 @@
         app:layout_constraintTop_toBottomOf="@+id/sexo_m_radiobutton" />
 
     <EditText
-        android:id="@+id/fechanacimiento_datepicker"
+        android:id="@+id/fechanacimiento_edittext"
         android:layout_width="155dp"
         android:layout_height="40dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="16dp"
         android:ems="10"
-        android:inputType="date"
+        android:hint="@string/fecha_nacimiento"
+        android:inputType="none"
+        android:focusable="false"
         app:layout_constraintStart_toEndOf="@+id/fechanacimiento_textview"
         app:layout_constraintTop_toBottomOf="@+id/sexo_f_radiobutton2" />
 
+
+
     <Spinner
         android:id="@+id/gradoescolaridad_spinner"
+        android:entries="@array/grados_escolares"
         android:layout_width="321dp"
         android:layout_height="34dp"
         android:layout_marginStart="55dp"
         android:layout_marginTop="50dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fechanacimiento_datepicker" />
+        app:layout_constraintTop_toBottomOf="@+id/fechanacimiento_edittext" />
 
     <Button
         android:id="@+id/siguiente_button"

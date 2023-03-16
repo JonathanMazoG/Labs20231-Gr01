@@ -1,4 +1,15 @@
 <resources>
+    <string name="nombre">Nombres</string>
+    <string name="apellido">Apellidos</string>
+    <string name="sexo">Sexo</string>
+    <string name="fecha_nacimiento">Fecha de nacimiento</string>
+    <string name="grado_escolaridad">Grado de escolaridad</string>
+    <string-array name="grados_escolares">
+        <item>Primaria</item>
+        <item>Secundaria</item>
+        <item>Universidad</item>
+        <item>Otro</item>
+    </string-array>
     <string name="app_name">Labs20231-Gr01</string>
     <string name="title_activity_personal_data">PersonalDataActivity</string>
     <!-- Strings used for fragments for navigation -->
