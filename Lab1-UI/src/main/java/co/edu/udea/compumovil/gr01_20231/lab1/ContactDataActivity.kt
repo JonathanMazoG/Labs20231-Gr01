@@ -1,6 +1,9 @@
 package co.edu.udea.compumovil.gr01_20231.lab1
 
+import android.app.DatePickerDialog
 import android.os.Bundle
+import android.util.Log
+import android.widget.*
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -8,28 +11,45 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import co.edu.udea.compumovil.gr01_20231.lab1.databinding.ContactDataActivityBinding
+import java.util.*
 
 class ContactDataActivity : AppCompatActivity() {
 
-    private lateinit var appBarConfiguration: AppBarConfiguration
-    private lateinit var binding: ContactDataActivityBinding
+    private lateinit var telefonoEditText: EditText
+    private lateinit var direccionEditText: EditText
+    private lateinit var correoEditText: EditText
+    private lateinit var paisEditText: EditText
+    private lateinit var ciudadEditText: EditText
+    private lateinit var siguiente1Button: Button
+
+    private var telefono: String = ""
+    private var direccion: String = ""
+    private var correo: String = ""
+    private var pais: String = ""
+    private var ciudad: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_personal_data)
 
-        binding = ContactDataActivityBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        telefonoEditText = findViewById(R.id.nombres_edittext)
+        direccionEditText = findViewById(R.id.apellidos_edittext)
+        correoEditText = findViewById(R.id.correo_edittext)
+        paisEditText= findViewById(R.id.pais_edittext)
+        ciudadEditText = findViewById(R.id.ciudad_edittext)
+        siguiente1Button = findViewById(R.id.siguiente1_button)
 
 
-        val navController = findNavController(R.id.nav_host_fragment_content_contact_data)
-        appBarConfiguration = AppBarConfiguration(navController.graph)
-        setupActionBarWithNavController(navController, appBarConfiguration)
 
-    }
+        siguiente1Button.setOnClickListener {
+            telefono = telefonoEditText.text.toString()
+            direccion = direccionEditText.text.toString()
+            correo = correoEditText.text.toString()
+            pais = paisEditText.text.toString()
+            ciudad = ciudadEditText.text.toString()
 
-    override fun onSupportNavigateUp(): Boolean {
-        val navController = findNavController(R.id.nav_host_fragment_content_contact_data)
-        return navController.navigateUp(appBarConfiguration)
-                || super.onSupportNavigateUp()
+            val datos1 = listOf(telefono, direccion, correo, pais, ciudad)
+            Log.d("PersonalDataActivity", datos1.joinToString(", "))
+        }
     }
 }
