@@ -17,7 +17,7 @@
         android:ems="10"
         android:imeActionLabel="Siguiente"
         android:inputType="textPersonName"
-        android:text="@string/nombre"
+        android:hint="@string/nombre"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -32,7 +32,7 @@
         android:autoText="true"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="@string/apellido"
+        android:hint="@string/apellido"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

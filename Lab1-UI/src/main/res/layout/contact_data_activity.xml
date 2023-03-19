@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".ContactDataActivity" >
 
-    <TextView
+    <EditText
         android:id="@+id/telefono_edittext"
         android:layout_width="300dp"
         android:layout_height="50dp"
@@ -16,11 +16,11 @@
         android:autoText="true"
         android:ems="10"
         android:inputType="text|number"
-        android:text="@string/telefono"
+        android:hint="@string/telefono"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
+    <EditText
         android:id="@+id/direccion_edittext"
         android:layout_width="300dp"
         android:layout_height="50dp"
@@ -29,11 +29,11 @@
         android:autoText="true"
         android:ems="10"
         android:inputType="textPostalAddress"
-        android:text="@string/direccion"
+        android:hint="@string/direccion"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
+    <EditText
         android:id="@+id/correo_edittext"
         android:layout_width="300dp"
         android:layout_height="50dp"
@@ -42,11 +42,11 @@
         android:autoText="true"
         android:ems="10"
         android:inputType="textEmailAddress"
-        android:text="@string/correo"
+        android:hint="@string/correo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
+    <EditText
         android:id="@+id/pais_edittext"
         android:layout_width="300dp"
         android:layout_height="50dp"
@@ -55,11 +55,14 @@
         android:autoText="true"
         android:ems="10"
         android:inputType="text"
-        android:text="@string/pais"
+        android:hint="@string/pais"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:imeOptions="actionNext"
+        android:imeActionLabel="Siguiente"
+        />
 
-    <TextView
+    <EditText
         android:id="@+id/ciudad_edittext"
         android:layout_width="300dp"
         android:layout_height="50dp"
@@ -68,9 +71,11 @@
         android:autoText="true"
         android:ems="10"
         android:inputType="text"
-        android:text="@string/ciudad"
+        android:hint="@string/ciudad"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:imeOptions="actionNext"
+        />
 
     <Button
         android:id="@+id/siguiente1_button"

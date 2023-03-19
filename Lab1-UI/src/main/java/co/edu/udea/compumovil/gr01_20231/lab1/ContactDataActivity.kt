@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.*
+import android.view.inputmethod.EditorInfo
+
 
 import androidx.appcompat.app.AppCompatActivity
 
@@ -36,6 +38,7 @@ class ContactDataActivity : AppCompatActivity() {
         ciudadEditText = findViewById(R.id.ciudad_edittext)
         siguiente1Button = findViewById(R.id.siguiente1_button)
 
+        ciudadEditText.imeOptions = EditorInfo.IME_ACTION_NEXT
 
         siguiente1Button.setOnClickListener {
             telefono = telefonoEditText.text.toString()
