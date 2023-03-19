@@ -27,10 +27,10 @@ class ContactDataActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_personal_data)
+        setContentView(R.layout.contact_data_activity)
 
-        telefonoEditText = findViewById(R.id.nombres_edittext)
-        direccionEditText = findViewById(R.id.apellidos_edittext)
+        telefonoEditText = findViewById(R.id.telefono_edittext)
+        direccionEditText = findViewById(R.id.direccion_edittext)
         correoEditText = findViewById(R.id.correo_edittext)
         paisEditText= findViewById(R.id.pais_edittext)
         ciudadEditText = findViewById(R.id.ciudad_edittext)
