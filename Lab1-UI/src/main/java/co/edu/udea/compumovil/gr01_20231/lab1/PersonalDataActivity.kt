@@ -66,8 +66,21 @@ class PersonalDataActivity : AppCompatActivity() {
                 R.id.sexo_m_radiobutton -> sexo = "Hombre"
                 R.id.sexo_f_radiobutton -> sexo = "Mujer"
             }
+            if (nombres.isEmpty()) {
+                nombresEditText.error = getString(R.string.errornombres)
+                return@setOnClickListener
+            }
+            if (apellidos.isEmpty()) {
+                apellidosEditText.error =  getString(R.string.errorapellidos)
+                return@setOnClickListener
+            }
             fechaNacimiento = fechaNacimientoEditText.text.toString()
             gradoEscolaridad = gradoEscolaridadSpinner.selectedItem.toString()
+            if (fechaNacimiento.isEmpty()) {
+                fechaNacimientoEditText.error =  getString(R.string.errorfnacimiento)
+                return@setOnClickListener
+            }
+
 
             val datos = listOf(nombres, apellidos, sexo, fechaNacimiento, gradoEscolaridad)
             Log.d("PersonalDataActivity", datos.joinToString(", "))

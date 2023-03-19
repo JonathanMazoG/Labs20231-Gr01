@@ -10,6 +10,9 @@
     <string name="ciudad">City</string>
     <string name="errortel">Please enter your telephone number</string>
     <string name="errorcorreo">Please enter your email address</string>
+    <string name="errornombres">Please enter your name</string>
+    <string name="errorapellidos">Please enter your last name</string>
+    <string name="errorfnacimiento">Please enter your date of birth</string>
     <string name="fecha_nacimiento">Date of birth</string>
     <string name="grado_escolaridad">education level</string>
     <string-array name="grados_escolares">
