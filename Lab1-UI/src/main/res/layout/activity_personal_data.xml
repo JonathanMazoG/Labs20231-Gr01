@@ -81,6 +81,7 @@
         android:layout_marginTop="31dp"
         android:layout_marginEnd="10dp"
         android:text="Fecha de nacimiento"
+
         app:layout_constraintEnd_toStartOf="@+id/fechanacimiento_edittext"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sexo_radiogroup" />
@@ -95,6 +96,8 @@
         android:hint="@string/fecha_nacimiento"
         android:inputType="none"
         android:focusable="false"
+        android:imeActionLabel="Siguiente"
+        android:imeOptions="flagNoFullscreen"
         app:layout_constraintStart_toEndOf="@+id/fechanacimiento_textview"
         app:layout_constraintTop_toBottomOf="@+id/sexo_radiogroup" />
 

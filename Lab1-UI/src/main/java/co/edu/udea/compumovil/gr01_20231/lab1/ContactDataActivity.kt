@@ -3,14 +3,11 @@ package co.edu.udea.compumovil.gr01_20231.lab1
 import android.app.DatePickerDialog
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.*
-import com.google.android.material.snackbar.Snackbar
+
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
-import co.edu.udea.compumovil.gr01_20231.lab1.databinding.ContactDataActivityBinding
+
 import java.util.*
 
 class ContactDataActivity : AppCompatActivity() {
@@ -38,7 +35,6 @@ class ContactDataActivity : AppCompatActivity() {
         paisEditText= findViewById(R.id.pais_edittext)
         ciudadEditText = findViewById(R.id.ciudad_edittext)
         siguiente1Button = findViewById(R.id.siguiente1_button)
-
 
 
         siguiente1Button.setOnClickListener {
