@@ -5,7 +5,8 @@
     android:id="@+id/coordinatorLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ContactDataActivity" >
+    tools:context=".ContactDataActivity"
+    android:background="@drawable/gradient_background">
 
     <EditText
         android:id="@+id/telefono_edittext"
@@ -18,10 +19,15 @@
         android:inputType="text|number"
         android:hint="@string/telefono"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:drawableStart="@drawable/ic_telefono"
+        android:background="@drawable/rounded_edittext"
+        android:textColor="#FFFFFF"
+        android:drawablePadding="8dp"/>
 
     <EditText
         android:id="@+id/direccion_edittext"
+        android:drawablePadding="8dp"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_marginStart="52dp"
@@ -31,26 +37,34 @@
         android:inputType="textPostalAddress"
         android:hint="@string/direccion"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:drawableStart="@drawable/ic_direccion"
+        android:background="@drawable/rounded_edittext"
+        android:textColor="#FFFFFF"/>
 
     <EditText
         android:id="@+id/correo_edittext"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_marginStart="52dp"
+        android:drawablePadding="8dp"
         android:layout_marginTop="180dp"
         android:autoText="true"
         android:ems="10"
         android:inputType="textEmailAddress"
         android:hint="@string/correo"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:drawableStart="@drawable/ic_correo"
+        android:background="@drawable/rounded_edittext"
+        android:textColor="#FFFFFF"/>
 
     <EditText
         android:id="@+id/pais_edittext"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_marginStart="52dp"
+        android:drawablePadding="8dp"
         android:layout_marginTop="264dp"
         android:autoText="true"
         android:ems="10"
@@ -58,8 +72,10 @@
         android:hint="@string/pais"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:imeOptions="actionNext"
-        android:imeActionLabel="Siguiente"
+        android:imeOptions="actionSearch"
+        android:drawableStart="@drawable/ic_pais"
+        android:background="@drawable/rounded_edittext"
+        android:textColor="#FFFFFF"
         />
 
     <EditText
@@ -67,6 +83,7 @@
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_marginStart="52dp"
+        android:drawablePadding="8dp"
         android:layout_marginTop="360dp"
         android:autoText="true"
         android:ems="10"
@@ -75,6 +92,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:imeOptions="actionNext"
+        android:drawableStart="@drawable/ic_ciudad"
+        android:background="@drawable/rounded_edittext"
+        android:textColor="#FFFFFF"
         />
 
     <Button
