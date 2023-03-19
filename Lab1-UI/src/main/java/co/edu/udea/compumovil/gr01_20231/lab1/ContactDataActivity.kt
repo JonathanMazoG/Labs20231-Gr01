@@ -13,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity
 import java.util.*
 
 class ContactDataActivity : AppCompatActivity() {
-
+    data class Pais(val name: String, val alpha2Code: String)
     private lateinit var telefonoEditText: EditText
     private lateinit var direccionEditText: EditText
     private lateinit var correoEditText: EditText
@@ -47,8 +47,16 @@ class ContactDataActivity : AppCompatActivity() {
             pais = paisEditText.text.toString()
             ciudad = ciudadEditText.text.toString()
 
+            if (telefono.isEmpty()) {
+                telefonoEditText.error = getString(R.string.errortel)
+                return@setOnClickListener
+            }
+            if (correo.isEmpty()) {
+                correoEditText.error = "Por favor ingrese su teléfono"
+                return@setOnClickListener
+            }
             val datos1 = listOf(telefono, direccion, correo, pais, ciudad)
-            Log.d("PersonalDataActivity", datos1.joinToString(", "))
+            Log.d("ContactDataActivity", datos1.joinToString(", "))
         }
     }
 }

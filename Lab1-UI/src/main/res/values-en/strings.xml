@@ -1,20 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="nombre">Nombres</string>
-    <string name="apellido">Apellidos</string>
-    <string name="sexo">Sexo</string>
-    <string name="telefono">*Teléfono</string>
-    <string name="direccion">Dirección </string>
-    <string name="correo">*Correo</string>
-    <string name="pais">*País</string>
-    <string name="ciudad">Ciudad</string>
-    <string name="errortel">Por favor ingrese su teléfono</string>
-    <string name="fecha_nacimiento">Fecha de nacimiento</string>
-    <string name="grado_escolaridad">Grado de escolaridad</string>
+    <string name="nombre">Names</string>
+    <string name="apellido">Last Name</string>
+    <string name="sexo">Sex</string>
+    <string name="telefono">Phone</string>
+    <string name="direccion">Adress</string>
+    <string name="correo">Email</string>
+    <string name="pais">Country</string>
+    <string name="ciudad">City</string> <string name="errortel">Please enter your telephone number</string>
+    <string name="fecha_nacimiento">Date of birth</string>
+    <string name="grado_escolaridad">education level</string>
     <string-array name="grados_escolares">
-        <item>Primaria</item>
-        <item>Secundaria</item>
-        <item>Universidad</item>
-        <item>Otro</item>
+        <item>Primary</item>
+        <item>Secondary</item>
+        <item>University</item>
+        <item>Other</item>
     </string-array>
     <string name="app_name">Labs20231-Gr01</string>
     <string name="title_activity_personal_data">PersonalDataActivity</string>
