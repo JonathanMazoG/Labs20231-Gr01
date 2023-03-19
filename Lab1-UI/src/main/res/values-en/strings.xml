@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="nombre">Names</string>
+    <string name="apellido">Last Name</string>
+    <string name="sexo">Sex</string>
+    <string name="telefono">Phone</string>
+    <string name="direccion">Adress</string>
+    <string name="correo">Email</string>
+    <string name="pais">Country</string>
+    <string name="ciudad">City</string>
+    <string name="fecha_nacimiento">Date of birth</string>
+    <string name="grado_escolaridad">education level</string>
+    <string-array name="grados_escolares">
+        <item>Primary</item>
+        <item>Secondary</item>
+        <item>University</item>
+        <item>Other</item>
+    </string-array>
+    <string name="app_name">Labs20231-Gr01</string>
+    <string name="title_activity_personal_data">PersonalDataActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="title_activity_contact_data">ContactDataActivity</string>
+</resources>

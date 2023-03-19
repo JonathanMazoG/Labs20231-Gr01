@@ -13,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity
 import java.util.*
 
 class ContactDataActivity : AppCompatActivity() {
-
+    data class Pais(val name: String, val alpha2Code: String)
     private lateinit var telefonoEditText: EditText
     private lateinit var direccionEditText: EditText
     private lateinit var correoEditText: EditText

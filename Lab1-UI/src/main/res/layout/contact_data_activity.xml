@@ -16,6 +16,7 @@
         android:autoText="true"
         android:ems="10"
         android:inputType="text|number"
+        android:imeOptions="actionSearch"
         android:hint="@string/telefono"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
