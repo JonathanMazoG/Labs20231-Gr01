@@ -15,6 +15,7 @@
         android:layout_marginTop="32dp"
         android:autoText="true"
         android:ems="10"
+        android:imeActionLabel="Siguiente"
         android:inputType="textPersonName"
         android:text="@string/nombre"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,6 +27,8 @@
         android:layout_height="50dp"
         android:layout_marginStart="55dp"
         android:layout_marginTop="100dp"
+
+        android:imeActionLabel="Siguiente"
         android:autoText="true"
         android:ems="10"
         android:inputType="textPersonName"
@@ -52,7 +55,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Hombre" />
-
         <RadioButton
             android:id="@+id/sexo_f_radiobutton"
             android:layout_width="wrap_content"
@@ -96,8 +98,7 @@
         android:hint="@string/fecha_nacimiento"
         android:inputType="none"
         android:focusable="false"
-        android:imeActionLabel="Siguiente"
-        android:imeOptions="flagNoFullscreen"
+
         app:layout_constraintStart_toEndOf="@+id/fechanacimiento_textview"
         app:layout_constraintTop_toBottomOf="@+id/sexo_radiogroup" />
 
