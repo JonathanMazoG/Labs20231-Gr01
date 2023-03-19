@@ -7,7 +7,7 @@
     <string name="direccion">Adress</string>
     <string name="correo">Email</string>
     <string name="pais">Country</string>
-    <string name="ciudad">City</string>
+    <string name="ciudad">City</string> <string name="errortel">Please enter your telephone number</string>
     <string name="fecha_nacimiento">Date of birth</string>
     <string name="grado_escolaridad">education level</string>
     <string-array name="grados_escolares">
