@@ -40,15 +40,23 @@ class ContactDataActivity : AppCompatActivity() {
         ciudadSpinner = findViewById(R.id.ciudad_spinner)
         siguiente1Button = findViewById(R.id.siguiente1_button)
 
-
-
+        // Llamar a la función fetchCountries al iniciar la actividad
+        countryApiService.fetchCountries("Americas") { countries, error ->
+            runOnUiThread {
+                if (error != null) {
+                    Log.e("Ha ocurrido un error ", "el error consiste en", error)
+                } else {
+                    Log.d("Countries:------------------------------------------- ", countries.toString())
+                    val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, countries!!)
+                    paisSpinner.adapter = adapter
+                }
+            }
+        }
 
         siguiente1Button.setOnClickListener {
             telefono = telefonoEditText.text.toString()
             direccion = direccionEditText.text.toString()
             correo = correoEditText.text.toString()
-            pais = paisSpinner.selectedItem.toString()
-            ciudad = ciudadSpinner.selectedItem.toString()
 
             if (telefono.isEmpty()) {
                 telefonoEditText.error = getString(R.string.errortel)
@@ -60,18 +68,7 @@ class ContactDataActivity : AppCompatActivity() {
             }
             val datos1 = listOf(telefono, direccion, correo, pais, ciudad)
             Log.d("ContactDataActivity", datos1.joinToString(", "))
-
-            countryApiService.fetchCountries("Americas") { countries, error ->
-                if (error != null) {
-                    Log.e("Countries:------------------------------------------- ", "vvv")
-                } else {
-                    Log.d("Countries:------------------------------------------- ", countries.toString())
-
-                }
-            }
         }
-
-
-
     }
+
 }

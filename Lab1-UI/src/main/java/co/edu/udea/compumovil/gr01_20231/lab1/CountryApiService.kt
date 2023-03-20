@@ -1,11 +1,14 @@
 package co.edu.udea.compumovil.gr01_20231.lab1
 
+import android.util.Log
+import com.google.gson.Gson
 import okhttp3.*
 import java.io.IOException
-import kotlin.math.log
+data class Country(val name: Name)
+
+data class Name(val common: String, val official: String)
 
 class CountryApiService {
-
     companion object {
         private const val BASE_URL = "https://restcountries.com/v3.1/"
     }
@@ -24,19 +27,20 @@ class CountryApiService {
 
             override fun onResponse(call: Call, response: Response) {
                 val json = response.body?.string()
-                val countries = parseCountries(json)
-                callback(countries, null)
-
+                if (json != null) {
+                    val gson = Gson()
+                    val countries = gson.fromJson(json, Array<Country>::class.java)
+                    val countryNames = countries.map { it.name.common }
+                    val sortedCountries = countryNames.sorted()
+                    val countriesByLetter = sortedCountries.groupBy { it.first().toUpperCase() }
+                    val countryList = countriesByLetter.flatMap { (letter, countries) ->
+                        listOf(letter.toString()) + countries.sorted()
+                    }
+                    callback(countryList, null)
+                } else {
+                    callback(null, Exception("Empty response"))
+                }
             }
         })
     }
-
-    private fun parseCountries(json: String?): List<String>? {
-        // Aquí deberías implementar la lógica para parsear la respuesta JSON
-        // y extraer los nombres de los países. Depende de la estructura de la
-        // respuesta de la API.
-        return null
-    }
 }
-
-
