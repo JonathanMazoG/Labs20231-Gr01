@@ -7,7 +7,12 @@
     <string name="direccion">Dirección </string>
     <string name="correo">*Correo</string>
     <string name="pais">*País</string>
-    <string name="ciudad">Ciudad</string> <string name="errortel">Por favor ingrese su teléfono</string>
+    <string name="ciudad">Ciudad</string>
+    <string name="errortel">Por favor ingrese su teléfono</string>
+    <string name="errorcorreo">Por favor ingrese su correo</string>
+    <string name="errornombres">Por favor ingrese su nombre</string>
+    <string name="errorapellidos">Por favor ingrese sus apellidos</string>
+    <string name="errorfnacimiento">Por favor ingrese su fecha de nacimiento</string>
     <string name="fecha_nacimiento">Fecha de nacimiento</string>
     <string name="grado_escolaridad">Grado de escolaridad</string>
     <string-array name="grados_escolares">

@@ -66,11 +66,35 @@ class PersonalDataActivity : AppCompatActivity() {
                 R.id.sexo_m_radiobutton -> sexo = "Hombre"
                 R.id.sexo_f_radiobutton -> sexo = "Mujer"
             }
+            if (nombres.isEmpty()) {
+                nombresEditText.error = getString(R.string.errornombres)
+                return@setOnClickListener
+            }
+            if (apellidos.isEmpty()) {
+                apellidosEditText.error =  getString(R.string.errorapellidos)
+                return@setOnClickListener
+            }
             fechaNacimiento = fechaNacimientoEditText.text.toString()
             gradoEscolaridad = gradoEscolaridadSpinner.selectedItem.toString()
+            if (fechaNacimiento.isEmpty()) {
+                fechaNacimientoEditText.error =  getString(R.string.errorfnacimiento)
+                return@setOnClickListener
+            }
+
 
             val datos = listOf(nombres, apellidos, sexo, fechaNacimiento, gradoEscolaridad)
             Log.d("PersonalDataActivity", datos.joinToString(", "))
+            Log.d("TAG", "------------------------------")
+            Log.d("TAG", "Información personal:")
+            Log.d("TAG", String.format("%-20s%s", "Nombre:", nombres))
+            Log.d("TAG", String.format("%-20s%s", "Género:", sexo))
+            if (sexo == "Masculino") {
+                Log.d("TAG", String.format("%-20s%s", "", "(Suponiendo que el usuario seleccionó Hombre, es campo opcional)"))
+            }
+            Log.d("TAG", String.format("%-20s%s", "Fecha de nacimiento:", fechaNacimiento))
+            if (!gradoEscolaridad.isNullOrEmpty()) {
+                Log.d("TAG", String.format("%-20s%s", "Educación:", gradoEscolaridad))
+            }
         }
     }
 }

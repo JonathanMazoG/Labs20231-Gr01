@@ -55,7 +55,7 @@ class ContactDataActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
             if (correo.isEmpty()) {
-                correoEditText.error = "Por favor ingrese su teléfono"
+                correoEditText.error =  getString(R.string.errorcorreo)
                 return@setOnClickListener
             }
             val datos1 = listOf(telefono, direccion, correo, pais, ciudad)
