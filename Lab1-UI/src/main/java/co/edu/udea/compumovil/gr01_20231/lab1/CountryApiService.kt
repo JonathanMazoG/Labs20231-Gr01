@@ -3,7 +3,7 @@ package co.edu.udea.compumovil.gr01_20231.lab1
 import okhttp3.*
 import java.io.IOException
 import kotlin.math.log
-
+import org.json.JSONObject
 class CountryApiService {
 
     companion object {
@@ -18,11 +18,11 @@ class CountryApiService {
             .build()
 
         client.newCall(request).enqueue(object : Callback {
-            override fun onFailure(call: Call, e: IOException) {
+           override fun onFailure(call: Call, e: IOException) {
                 callback(null, e)
             }
 
-            override fun onResponse(call: Call, response: Response) {
+           override fun onResponse(call: Call, response: Response) {
                 val json = response.body?.string()
                 val countries = parseCountries(json)
                 callback(countries, null)
@@ -32,9 +32,18 @@ class CountryApiService {
     }
 
     private fun parseCountries(json: String?): List<String>? {
-        // Aquí deberías implementar la lógica para parsear la respuesta JSON
-        // y extraer los nombres de los países. Depende de la estructura de la
-        // respuesta de la API.
+        json?.let {
+            val jsonObject = JSONObject(it)
+            val countriesArray = jsonObject.getJSONArray("countries")
+
+            val countriesList = mutableListOf<String>()
+            for (i in 0 until countriesArray.length()) {
+                val countryObject = countriesArray.getJSONObject(i)
+                val countryName = countryObject.getJSONObject("name").getString("common")
+                countriesList.add(countryName)
+            }
+            return countriesList
+        }
         return null
     }
 }

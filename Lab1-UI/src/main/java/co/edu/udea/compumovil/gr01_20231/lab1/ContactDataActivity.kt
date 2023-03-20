@@ -47,9 +47,9 @@ class ContactDataActivity : AppCompatActivity() {
             telefono = telefonoEditText.text.toString()
             direccion = direccionEditText.text.toString()
             correo = correoEditText.text.toString()
-            pais = paisSpinner.selectedItem.toString()
-            ciudad = ciudadSpinner.selectedItem.toString()
-
+            //pais = paisSpinner.selectedItem.toString()
+           // ciudad = ciudadSpinner.selectedItem.toString()
+            Log.d("ContactDataActivity", "eNTREEEEEEEEEEEEE AL SIGUIENTE")
             if (telefono.isEmpty()) {
                 telefonoEditText.error = getString(R.string.errortel)
                 return@setOnClickListener
@@ -62,6 +62,9 @@ class ContactDataActivity : AppCompatActivity() {
             Log.d("ContactDataActivity", datos1.joinToString(", "))
 
             countryApiService.fetchCountries("Americas") { countries, error ->
+                Log.d("Countries:------------------------------------------- ",
+                    countries.toString()
+                )
                 if (error != null) {
                     Log.e("Countries:------------------------------------------- ", "vvv")
                 } else {
