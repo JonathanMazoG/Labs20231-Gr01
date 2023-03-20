@@ -60,8 +60,8 @@
         android:background="@drawable/rounded_edittext"
         android:textColor="#FFFFFF"/>
 
-    <EditText
-        android:id="@+id/pais_edittext"
+    <Spinner
+        android:id="@+id/pais_spinner"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_marginStart="52dp"
@@ -69,7 +69,6 @@
         android:layout_marginTop="264dp"
         android:autoText="true"
         android:ems="10"
-        android:inputType="text"
         android:hint="@string/pais"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -79,8 +78,8 @@
         android:textColor="#FFFFFF"
         />
 
-    <EditText
-        android:id="@+id/ciudad_edittext"
+    <Spinner
+        android:id="@+id/ciudad_spinner"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_marginStart="52dp"

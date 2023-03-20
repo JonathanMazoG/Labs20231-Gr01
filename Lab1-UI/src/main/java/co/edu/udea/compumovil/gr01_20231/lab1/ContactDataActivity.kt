@@ -17,8 +17,8 @@ class ContactDataActivity : AppCompatActivity() {
     private lateinit var telefonoEditText: EditText
     private lateinit var direccionEditText: EditText
     private lateinit var correoEditText: EditText
-    private lateinit var paisEditText: EditText
-    private lateinit var ciudadEditText: EditText
+    private lateinit var paisSpinner: Spinner
+    private lateinit var ciudadSpinner: Spinner
     private lateinit var siguiente1Button: Button
 
     private var telefono: String = ""
@@ -27,6 +27,8 @@ class ContactDataActivity : AppCompatActivity() {
     private var pais: String = ""
     private var ciudad: String = ""
 
+    private val countryApiService = CountryApiService()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.contact_data_activity)
@@ -34,18 +36,19 @@ class ContactDataActivity : AppCompatActivity() {
         telefonoEditText = findViewById(R.id.telefono_edittext)
         direccionEditText = findViewById(R.id.direccion_edittext)
         correoEditText = findViewById(R.id.correo_edittext)
-        paisEditText= findViewById(R.id.pais_edittext)
-        ciudadEditText = findViewById(R.id.ciudad_edittext)
+        paisSpinner= findViewById(R.id.pais_spinner)
+        ciudadSpinner = findViewById(R.id.ciudad_spinner)
         siguiente1Button = findViewById(R.id.siguiente1_button)
 
-        ciudadEditText.imeOptions = EditorInfo.IME_ACTION_NEXT
+
+
 
         siguiente1Button.setOnClickListener {
             telefono = telefonoEditText.text.toString()
             direccion = direccionEditText.text.toString()
             correo = correoEditText.text.toString()
-            pais = paisEditText.text.toString()
-            ciudad = ciudadEditText.text.toString()
+            pais = paisSpinner.selectedItem.toString()
+            ciudad = ciudadSpinner.selectedItem.toString()
 
             if (telefono.isEmpty()) {
                 telefonoEditText.error = getString(R.string.errortel)
@@ -57,6 +60,18 @@ class ContactDataActivity : AppCompatActivity() {
             }
             val datos1 = listOf(telefono, direccion, correo, pais, ciudad)
             Log.d("ContactDataActivity", datos1.joinToString(", "))
+
+            countryApiService.fetchCountries("Americas") { countries, error ->
+                if (error != null) {
+                    Log.e("Countries:------------------------------------------- ", "vvv")
+                } else {
+                    Log.d("Countries:------------------------------------------- ", countries.toString())
+
+                }
+            }
         }
+
+
+
     }
 }
