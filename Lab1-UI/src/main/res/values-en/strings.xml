@@ -7,6 +7,7 @@
     <string name="direccion">Address</string>
     <string name="correo">Email</string>
     <string name="pais">Country</string>
+    <string name="estado">State</string>
     <string name="ciudad">City</string>
     <string name="errortel">Please enter your telephone number</string>
     <string name="errorcorreo">Please enter your email address</string>
@@ -18,8 +19,8 @@
     <string name="grado_escolaridad">education level</string>
     <string-array name="grados_escolares">
         <item>None</item>
-        <item>Primary</item>
-        <item>Secondary</item>
+        <item>Primary school</item>
+        <item>High school</item>
         <item>University</item>
         <item>Other</item>
     </string-array>

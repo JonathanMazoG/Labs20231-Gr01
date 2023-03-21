@@ -6,6 +6,7 @@
     <string name="direccion">Dirección </string>
     <string name="correo">*Correo</string>
     <string name="pais">*País</string>
+    <string name="estado">*Estado</string>
     <string name="ciudad">Ciudad</string>
     <string name="errortel">Por favor ingrese su teléfono</string>
     <string name="errorcorreo">Por favor ingrese su correo</string>

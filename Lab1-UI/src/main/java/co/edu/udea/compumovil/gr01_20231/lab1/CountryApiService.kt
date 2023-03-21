@@ -7,6 +7,7 @@ import okhttp3.*
 import java.io.IOException
 
 data class Country(val country_name: String)
+data class States(val state_name: String)
 data class Cities(val city_name: String)
 
 class CountryApiService {
@@ -19,28 +20,88 @@ class CountryApiService {
             FetchCountriesAsyncTask(callback).execute()
         }
 
-        fun fetchCityByCountry(country: String ,callback: (List<String>?, Exception?) -> Unit) {
-            val client = OkHttpClient()
-            val token = getAuthToken()
+        fun fetchCitiesByStates(state: String, callback: (List<String>?, Exception?) -> Unit) {
+            FetchCitiesAsyncTask(state, callback).execute()
+        }
 
-            if (token != null) {
+        private class FetchCitiesAsyncTask(private val state: String, private val callback: (List<String>?, Exception?) -> Unit) : AsyncTask<Unit, Unit, Pair<List<String>?, Exception?>>() {
+            override fun doInBackground(vararg params: Unit?): Pair<List<String>?, Exception?> {
+                val client = OkHttpClient()
+                val token = getAuthToken()
+
+                if (token == null) {
+                    return Pair(null, Exception("Unable to get authentication token"))
+                }
+
                 val request = Request.Builder()
-                    .url("${BASE_URL}cities/${country}")
+                    .url("${BASE_URL}cities/$state")
                     .addHeader("Authorization", "Bearer $token")
                     .build()
 
+                return try {
                     val response = client.newCall(request).execute()
                     val json = response.body?.string()
                     if (json != null) {
                         val gson = Gson()
                         val cities = gson.fromJson(json, Array<Cities>::class.java)
                         val citiesList = cities.map { it.city_name }
-                        callback(citiesList, null)
+                        Pair(citiesList, null)
                     } else {
-                        callback(null, Exception("Empty response"))
+                        Pair(null, Exception("Empty response"))
                     }
+                } catch (e: IOException) {
+                    Pair(null, e)
+                }
+            }
+
+            override fun onPostExecute(result: Pair<List<String>?, Exception?>) {
+                callback(result.first, result.second)
             }
         }
+
+        fun fetchStateByCountry(country: String, callback: (List<String>?, Exception?) -> Unit) {
+            FetchStatesAsyncTask(country, callback).execute()
+        }
+
+        private class FetchStatesAsyncTask(private val country: String, private val callback: (List<String>?, Exception?) -> Unit) : AsyncTask<Unit, Unit, Pair<List<String>?, Exception?>>() {
+            override fun doInBackground(vararg params: Unit?): Pair<List<String>?, Exception?> {
+                val client = OkHttpClient()
+                val token = getAuthToken()
+
+                if (token == null) {
+                    return Pair(null, Exception("Unable to get authentication token"))
+                }
+
+                val request = Request.Builder()
+                    .url("${BASE_URL}states/$country")
+                    .addHeader("Authorization", "Bearer $token")
+                    .build()
+
+                return try {
+                    val response = client.newCall(request).execute()
+                    val json = response.body?.string()
+                    if (json != null) {
+                        val gson = Gson()
+                        val states = gson.fromJson(json, Array<States>::class.java)
+                        val statesList = states.map { it.state_name }
+                        Pair(statesList, null)
+                    } else {
+                        Pair(null, Exception("Empty response"))
+                    }
+                } catch (e: IOException) {
+                    Pair(null, e)
+                }
+            }
+
+            override fun onPostExecute(result: Pair<List<String>?, Exception?>) {
+                callback(result.first, result.second)
+            }
+        }
+
+
+
+
+
 
         private class FetchCountriesAsyncTask(private val callback: (List<String>?, Exception?) -> Unit) : AsyncTask<Unit, Unit, Pair<List<String>?, Exception?>>() {
             override fun doInBackground(vararg params: Unit?): Pair<List<String>?, Exception?> {
