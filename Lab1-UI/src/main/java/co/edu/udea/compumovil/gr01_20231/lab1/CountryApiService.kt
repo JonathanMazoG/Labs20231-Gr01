@@ -7,6 +7,7 @@ import okhttp3.*
 import java.io.IOException
 
 data class Country(val country_name: String)
+data class Cities(val city_name: String)
 
 class CountryApiService {
     companion object {
@@ -16,6 +17,29 @@ class CountryApiService {
 
         fun fetchCountries(callback: (List<String>?, Exception?) -> Unit) {
             FetchCountriesAsyncTask(callback).execute()
+        }
+
+        fun fetchCityByCountry(country: String ,callback: (List<String>?, Exception?) -> Unit) {
+            val client = OkHttpClient()
+            val token = getAuthToken()
+
+            if (token != null) {
+                val request = Request.Builder()
+                    .url("${BASE_URL}cities/${country}")
+                    .addHeader("Authorization", "Bearer $token")
+                    .build()
+
+                    val response = client.newCall(request).execute()
+                    val json = response.body?.string()
+                    if (json != null) {
+                        val gson = Gson()
+                        val cities = gson.fromJson(json, Array<Cities>::class.java)
+                        val citiesList = cities.map { it.city_name }
+                        callback(citiesList, null)
+                    } else {
+                        callback(null, Exception("Empty response"))
+                    }
+            }
         }
 
         private class FetchCountriesAsyncTask(private val callback: (List<String>?, Exception?) -> Unit) : AsyncTask<Unit, Unit, Pair<List<String>?, Exception?>>() {
@@ -74,6 +98,7 @@ class CountryApiService {
                 return tokenResponse.auth_token
             }
         }
+
 
         private data class TokenResponse(val auth_token: String)
     }
