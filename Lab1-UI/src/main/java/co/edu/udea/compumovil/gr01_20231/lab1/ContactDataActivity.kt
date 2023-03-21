@@ -59,6 +59,7 @@ class ContactDataActivity : AppCompatActivity() {
             correo = correoEditText.text.toString()
             pais = paisAutoCompleteTextView.text.toString()
 
+
             if (telefono.isEmpty()) {
                 telefonoEditText.error = getString(R.string.errortel)
                 return@setOnClickListener
