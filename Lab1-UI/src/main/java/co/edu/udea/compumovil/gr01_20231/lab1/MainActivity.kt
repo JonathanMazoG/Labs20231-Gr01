@@ -20,17 +20,14 @@ class MainActivity : AppCompatActivity() {
         bottomNavigation.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.menu_home -> {
-                    // Acciones cuando se hace clic en el elemento de menú "Inicio"
                     true
                 }
                 R.id.menu_register -> {
-                    // Acciones cuando se hace clic en el elemento de menú "Registro"
                     val intent = Intent(this, ContactDataActivity::class.java)
                     startActivity(intent)
                     true
                 }
                 R.id.menu_profile -> {
-                    // Acciones cuando se hace clic en el elemento de menú "Perfil"
                     true
                 }
                 else -> false

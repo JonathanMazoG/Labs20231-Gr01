@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.*
+import android.content.Intent
 
 import androidx.appcompat.app.AppCompatActivity
 
@@ -94,6 +95,9 @@ class PersonalDataActivity : AppCompatActivity() {
                 if (gradoEscolaridad!="None"){
                 Log.d("TAG", String.format( "%-20s%s", "Educación:", gradoEscolaridad))}
             }
+
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
         }
     }
 }

@@ -7,6 +7,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import co.edu.udea.compumovil.gr01_20231.lab1.CountryApiService
 
 class ContactDataActivity : AppCompatActivity() {
@@ -154,6 +155,9 @@ class ContactDataActivity : AppCompatActivity() {
             if(!ciudad.isNullOrEmpty()) {
                 Log.d("TAG", String.format("%-20s%s", "Ciudad:", ciudad))
             }
+
+            val intent = Intent(this, PersonalDataActivity::class.java)
+            startActivity(intent)
         }
     }
 
