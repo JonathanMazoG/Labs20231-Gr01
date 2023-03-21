@@ -9,6 +9,7 @@
     <string name="ciudad">Ciudad</string>
     <string name="errortel">Por favor ingrese su teléfono</string>
     <string name="errorcorreo">Por favor ingrese su correo</string>
+    <string name="errorpais">Por favor ingrese su pais</string>
     <string name="errornombres">Por favor ingrese su nombre</string>
     <string name="errorapellidos">Por favor ingrese sus apellidos</string>
     <string name="errorfnacimiento">Por favor ingrese su fecha de nacimiento</string>

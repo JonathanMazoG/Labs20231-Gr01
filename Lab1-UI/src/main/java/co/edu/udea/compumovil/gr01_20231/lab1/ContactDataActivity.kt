@@ -5,7 +5,8 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.*
-import android.view.inputmethod.EditorInfo
+import co.edu.udea.compumovil.gr01_20231.lab1.CountryApiService
+
 
 
 import androidx.appcompat.app.AppCompatActivity
@@ -27,8 +28,6 @@ class ContactDataActivity : AppCompatActivity() {
     private var pais: String = ""
     private var ciudad: String = ""
 
-    private val countryApiService = CountryApiService()
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.contact_data_activity)
@@ -41,7 +40,7 @@ class ContactDataActivity : AppCompatActivity() {
         siguiente1Button = findViewById(R.id.siguiente1_button)
 
         // Llamar a la función fetchCountries al iniciar la actividad
-        countryApiService.fetchCountries("Americas") { countries, error ->
+        CountryApiService.fetchCountries() { countries, error ->
             runOnUiThread {
                 if (error != null) {
                     Log.e("Ha ocurrido un error ", "el error consiste en", error)
@@ -58,6 +57,7 @@ class ContactDataActivity : AppCompatActivity() {
             telefono = telefonoEditText.text.toString()
             direccion = direccionEditText.text.toString()
             correo = correoEditText.text.toString()
+            pais = paisAutoCompleteTextView.text.toString()
 
 
             if (telefono.isEmpty()) {
@@ -66,6 +66,10 @@ class ContactDataActivity : AppCompatActivity() {
             }
             if (correo.isEmpty()) {
                 correoEditText.error =  getString(R.string.errorcorreo)
+                return@setOnClickListener
+            }
+            if (pais.isEmpty()) {
+                paisAutoCompleteTextView.error =  getString(R.string.errorpais)
                 return@setOnClickListener
             }
             val datos1 = listOf(telefono, direccion, correo, pais, ciudad)
