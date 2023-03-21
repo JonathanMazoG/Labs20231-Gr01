@@ -58,6 +58,7 @@ class ContactDataActivity : AppCompatActivity() {
             telefono = telefonoEditText.text.toString()
             direccion = direccionEditText.text.toString()
             correo = correoEditText.text.toString()
+            pais = paisAutoCompleteTextView.text.toString()
 
             if (telefono.isEmpty()) {
                 telefonoEditText.error = getString(R.string.errortel)
@@ -65,6 +66,10 @@ class ContactDataActivity : AppCompatActivity() {
             }
             if (correo.isEmpty()) {
                 correoEditText.error =  getString(R.string.errorcorreo)
+                return@setOnClickListener
+            }
+            if (pais.isEmpty()) {
+                paisAutoCompleteTextView.error =  getString(R.string.errorpais)
                 return@setOnClickListener
             }
             val datos1 = listOf(telefono, direccion, correo, pais, ciudad)

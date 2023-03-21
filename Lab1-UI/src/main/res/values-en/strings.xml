@@ -10,6 +10,7 @@
     <string name="ciudad">City</string>
     <string name="errortel">Please enter your telephone number</string>
     <string name="errorcorreo">Please enter your email address</string>
+    <string name="errorpais">Please enter your email country</string>
     <string name="errornombres">Please enter your name</string>
     <string name="errorapellidos">Please enter your last name</string>
     <string name="errorfnacimiento">Please enter your date of birth</string>
