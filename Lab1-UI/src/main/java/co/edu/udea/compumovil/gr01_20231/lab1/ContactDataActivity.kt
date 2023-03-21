@@ -17,7 +17,7 @@ class ContactDataActivity : AppCompatActivity() {
     private lateinit var telefonoEditText: EditText
     private lateinit var direccionEditText: EditText
     private lateinit var correoEditText: EditText
-    private lateinit var paisSpinner: Spinner
+    private lateinit var paisSpinner: AutoCompleteTextView
     private lateinit var ciudadSpinner: Spinner
     private lateinit var siguiente1Button: Button
 
@@ -36,7 +36,7 @@ class ContactDataActivity : AppCompatActivity() {
         telefonoEditText = findViewById(R.id.telefono_edittext)
         direccionEditText = findViewById(R.id.direccion_edittext)
         correoEditText = findViewById(R.id.correo_edittext)
-        paisSpinner= findViewById(R.id.pais_spinner)
+        paisSpinner= findViewById<AutoCompleteTextView>(R.id.pais_spinner)
         ciudadSpinner = findViewById(R.id.ciudad_spinner)
         siguiente1Button = findViewById(R.id.siguiente1_button)
 
@@ -47,8 +47,9 @@ class ContactDataActivity : AppCompatActivity() {
                     Log.e("Ha ocurrido un error ", "el error consiste en", error)
                 } else {
                     Log.d("Countries:------------------------------------------- ", countries.toString())
-                    val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, countries!!)
-                    paisSpinner.adapter = adapter
+                    val adapter = ArrayAdapter(this, android.R.layout.simple_dropdown_item_1line, countries!!)
+                    paisSpinner.setAdapter(adapter)
+                    paisSpinner.threshold = 1
                 }
             }
         }
