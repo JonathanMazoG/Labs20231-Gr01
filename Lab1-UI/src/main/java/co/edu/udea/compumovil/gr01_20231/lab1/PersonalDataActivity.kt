@@ -83,17 +83,16 @@ class PersonalDataActivity : AppCompatActivity() {
 
 
             val datos = listOf(nombres, apellidos, sexo, fechaNacimiento, gradoEscolaridad)
-            Log.d("PersonalDataActivity", datos.joinToString(", "))
+
             Log.d("TAG", "------------------------------")
             Log.d("TAG", "Información personal:")
-            Log.d("TAG", String.format("%-20s%s", "Nombre:", nombres))
+            Log.d("TAG", String.format("%-20s%s %s", "Nombre:", nombres, apellidos))
             Log.d("TAG", String.format("%-20s%s", "Género:", sexo))
-            if (sexo == "Masculino") {
-                Log.d("TAG", String.format("%-20s%s", "", "(Suponiendo que el usuario seleccionó Hombre, es campo opcional)"))
-            }
-            Log.d("TAG", String.format("%-20s%s", "Fecha de nacimiento:", fechaNacimiento))
+
+            Log.d("TAG", String.format("%-20s%s", "Nació el", fechaNacimiento))
             if (!gradoEscolaridad.isNullOrEmpty()) {
-                Log.d("TAG", String.format("%-20s%s", "Educación:", gradoEscolaridad))
+                if (gradoEscolaridad!="None"){
+                Log.d("TAG", String.format( "%-20s%s", "Educación:", gradoEscolaridad))}
             }
         }
     }

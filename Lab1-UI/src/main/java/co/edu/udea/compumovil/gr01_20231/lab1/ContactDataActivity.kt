@@ -59,6 +59,7 @@ class ContactDataActivity : AppCompatActivity() {
             direccion = direccionEditText.text.toString()
             correo = correoEditText.text.toString()
 
+
             if (telefono.isEmpty()) {
                 telefonoEditText.error = getString(R.string.errortel)
                 return@setOnClickListener

@@ -15,6 +15,7 @@
     <string name="fecha_nacimiento">Fecha de nacimiento</string>
     <string name="grado_escolaridad">Grado de escolaridad</string>
     <string-array name="grados_escolares">
+        <item>None</item>
         <item>Primaria</item>
         <item>Secundaria</item>
         <item>Universidad</item>
