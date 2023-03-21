@@ -124,7 +124,7 @@
         android:layout_marginStart="40dp"
         android:layout_marginTop="52dp"
         android:textColor="#FFF"
-        android:text="Mujer"
+        android:text="@string/femenino"
         app:layout_constraintStart_toEndOf="@+id/sexo_m_radiobutton"
         app:layout_constraintTop_toBottomOf="@+id/apellidos_edittext" />
 
@@ -134,7 +134,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="236dp"
         android:layout_marginTop="68dp"
-        android:text="Sexo"
+        android:text="@string/sexo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/apellidos_edittext"
         android:drawableStart="@drawable/ic_sexo"
@@ -148,7 +148,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="52dp"
         android:textColor="#FFF"
-        android:text="Hombre"
+        android:text="@string/masculino"
         app:layout_constraintStart_toEndOf="@+id/sexo_textview"
         app:layout_constraintTop_toBottomOf="@+id/nombres_edittext" />
 

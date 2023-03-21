@@ -64,8 +64,8 @@ class PersonalDataActivity : AppCompatActivity() {
             nombres = nombresEditText.text.toString()
             apellidos = apellidosEditText.text.toString()
             when (sexoRadioGroup.checkedRadioButtonId) {
-                R.id.sexo_m_radiobutton -> sexo = "Hombre"
-                R.id.sexo_f_radiobutton -> sexo = "Mujer"
+                R.id.sexo_m_radiobutton -> sexo = getString(R.string.masculino)
+                R.id.sexo_f_radiobutton -> sexo = getString(R.string.femenino)
             }
             if (nombres.isEmpty()) {
                 nombresEditText.error = getString(R.string.errornombres)
@@ -86,14 +86,14 @@ class PersonalDataActivity : AppCompatActivity() {
             val datos = listOf(nombres, apellidos, sexo, fechaNacimiento, gradoEscolaridad)
 
             Log.d("TAG", "------------------------------")
-            Log.d("TAG", "Información personal:")
-            Log.d("TAG", String.format("%-20s%s %s", "Nombre:", nombres, apellidos))
-            Log.d("TAG", String.format("%-20s%s", "Género:", sexo))
+            Log.d("TAG", getString(R.string.informacionpersonal))
+            Log.d("TAG", String.format("%-20s%s %s", getString(R.string.nombre), nombres, apellidos))
+            Log.d("TAG", String.format("%-20s%s", getString(R.string.sexo), sexo))
 
-            Log.d("TAG", String.format("%-20s%s", "Nació el", fechaNacimiento))
+            Log.d("TAG", String.format("%-20s%s", getString(R.string.nacio), fechaNacimiento))
             if (!gradoEscolaridad.isNullOrEmpty()) {
                 if (gradoEscolaridad!="None"){
-                Log.d("TAG", String.format( "%-20s%s", "Educación:", gradoEscolaridad))}
+                Log.d("TAG", String.format( "%-20s%s", getString(R.string.grado_escolaridad), gradoEscolaridad))}
             }
 
             val intent = Intent(this, MainActivity::class.java)

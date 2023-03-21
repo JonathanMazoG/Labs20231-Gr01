@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="nombre">Names</string>
+    <string name="masculino">Male</string>
+    <string name="femenino">Female</string>
     <string name="apellido">Last Name</string>
     <string name="sexo">Sex</string>
     <string name="telefono">Phone</string>
@@ -9,12 +11,18 @@
     <string name="pais">Country</string>
     <string name="estado">State</string>
     <string name="ciudad">City</string>
+    <string name="home">Home</string>
+    <string name="registro">Register</string>
+    <string name="configuracion">settings</string>
+
     <string name="errortel">Please enter your telephone number</string>
     <string name="errorcorreo">Please enter your email address</string>
     <string name="errorpais">Please enter your email country</string>
     <string name="errornombres">Please enter your name</string>
     <string name="errorapellidos">Please enter your last name</string>
     <string name="errorfnacimiento">Please enter your date of birth</string>
+    <string name="informacionpersonal">Personal Information!!</string>
+    <string name="nacio">Was born</string>
     <string name="fecha_nacimiento">Date of birth</string>
     <string name="grado_escolaridad">education level</string>
     <string-array name="grados_escolares">

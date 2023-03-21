@@ -1,5 +1,7 @@
 <resources>
     <string name="nombre">Nombres</string>
+    <string name="masculino">Maculino</string>
+    <string name="femenino">Femenino</string>
     <string name="apellido">Apellidos</string>
     <string name="sexo">Sexo</string>
     <string name="telefono">*Teléfono</string>
@@ -8,6 +10,9 @@
     <string name="pais">*País</string>
     <string name="estado">*Estado</string>
     <string name="ciudad">Ciudad</string>
+    <string name="home">Inicio</string>
+    <string name="registro">Registro</string>
+    <string name="configuracion">Configuración</string>
     <string name="errortel">Por favor ingrese su teléfono</string>
     <string name="errorcorreo">Por favor ingrese su correo</string>
     <string name="errorpais">Por favor ingrese su pais</string>
@@ -16,6 +21,8 @@
     <string name="errorfnacimiento">Por favor ingrese su fecha de nacimiento</string>
     <string name="fecha_nacimiento">Fecha de nacimiento</string>
     <string name="grado_escolaridad">Grado de escolaridad</string>
+    <string name="informacionpersonal">Informacion Personal!!</string>
+    <string name="nacio">Nacio el</string>
     <string-array name="grados_escolares">
         <item>None</item>
         <item>Primaria</item>
