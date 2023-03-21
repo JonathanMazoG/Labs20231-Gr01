@@ -64,12 +64,26 @@
     </RadioGroup>
 
 
+    <EditText
+        android:id="@+id/fechanacimiento_edittext"
+        android:layout_width="155dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/rounded_edittext"
+        android:ems="10"
+        android:focusable="false"
+        android:hint="  1999/11/01"
+        android:inputType="none"
+        app:layout_constraintStart_toEndOf="@+id/fechanacimiento_textview"
+        app:layout_constraintTop_toBottomOf="@+id/sexo_f_radiobutton" />
+
     <TextView
         android:id="@+id/fechanacimiento_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="218dp"
-        android:layout_marginTop="23dp"
+        android:layout_marginStart="204dp"
+        android:layout_marginTop="20dp"
         android:drawableStart="@drawable/ic_fecha"
         android:drawablePadding="8dp"
         android:text="Fecha de nacimiento"
@@ -77,35 +91,54 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sexo_m_radiobutton" />
 
-    <EditText
-        android:id="@+id/fechanacimiento_edittext"
-        android:layout_width="155dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="14dp"
-        android:ems="10"
-        android:focusable="false"
-        android:hint="  1999/11/01"
-        android:inputType="none"
-        app:layout_constraintStart_toEndOf="@+id/fechanacimiento_textview"
-        app:layout_constraintTop_toBottomOf="@+id/sexo_f_radiobutton"
-        android:background="@drawable/rounded_edittext"
-        />
+    <RadioButton
+        android:id="@+id/sexo_f_radiobutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/femenino"
+        android:textColor="#FFF"
+        app:layout_constraintStart_toEndOf="@+id/sexo_m_radiobutton"
+        app:layout_constraintTop_toBottomOf="@+id/apellidos_edittext" />
+
+    <TextView
+        android:id="@+id/sexo_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="220dp"
+        android:layout_marginTop="36dp"
+        android:drawableStart="@drawable/ic_sexo"
+        android:drawablePadding="8dp"
+        android:text="@string/sexo"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/apellidos_edittext" />
 
     <Spinner
         android:id="@+id/gradoescolaridad_spinner"
         android:layout_width="321dp"
         android:layout_height="34dp"
-        android:layout_marginStart="210dp"
-        android:layout_marginTop="50dp"
-        android:entries="@array/grados_escolares"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fechanacimiento_edittext"
-        android:drawableStart="@drawable/ic_estudio"
+        android:layout_marginStart="196dp"
+        android:layout_marginTop="56dp"
         android:background="@drawable/rounded_edittext"
-        android:textColor="#FFFFFF"
+        android:drawableStart="@drawable/ic_estudio"
         android:drawablePadding="8dp"
-        />
+        android:entries="@array/grados_escolares"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fechanacimiento_edittext" />
+
+    <RadioButton
+        android:id="@+id/sexo_m_radiobutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/masculino"
+        android:textColor="#FFF"
+        app:layout_constraintStart_toEndOf="@+id/sexo_textview"
+        app:layout_constraintTop_toBottomOf="@+id/nombres_edittext" />
 
     <Button
         android:id="@+id/siguiente_button"
@@ -116,40 +149,5 @@
         android:text="Siguiente"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
-
-    <RadioButton
-        android:id="@+id/sexo_f_radiobutton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="52dp"
-        android:textColor="#FFF"
-        android:text="@string/femenino"
-        app:layout_constraintStart_toEndOf="@+id/sexo_m_radiobutton"
-        app:layout_constraintTop_toBottomOf="@+id/apellidos_edittext" />
-
-    <TextView
-        android:id="@+id/sexo_textview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="236dp"
-        android:layout_marginTop="68dp"
-        android:text="@string/sexo"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/apellidos_edittext"
-        android:drawableStart="@drawable/ic_sexo"
-        android:textColor="#FFFFFF"
-        android:drawablePadding="8dp"/>
-
-    <RadioButton
-        android:id="@+id/sexo_m_radiobutton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="52dp"
-        android:textColor="#FFF"
-        android:text="@string/masculino"
-        app:layout_constraintStart_toEndOf="@+id/sexo_textview"
-        app:layout_constraintTop_toBottomOf="@+id/nombres_edittext" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
