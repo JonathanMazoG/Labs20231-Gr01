@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coordinatorLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ContactDataActivity"
+    android:background="@drawable/gradient_background">
+
+    <EditText
+        android:id="@+id/telefono_edittext"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="32dp"
+        android:autoText="true"
+        android:ems="10"
+        android:inputType="text|number"
+        android:imeOptions="actionNext"
+        android:hint="@string/telefono"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:drawableStart="@drawable/ic_telefono"
+        android:background="@drawable/rounded_edittext"
+        android:textColor="#FFFFFF"
+        android:drawablePadding="8dp"/>
+
+    <EditText
+        android:id="@+id/direccion_edittext"
+        android:drawablePadding="8dp"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="100dp"
+        android:autoText="true"
+        android:ems="10"
+        android:inputType="textPostalAddress"
+        android:hint="@string/direccion"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:drawableStart="@drawable/ic_direccion"
+        android:background="@drawable/rounded_edittext"
+        android:textColor="#FFFFFF"/>
+
+    <EditText
+        android:id="@+id/correo_edittext"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="168dp"
+        android:autoText="true"
+        android:background="@drawable/rounded_edittext"
+        android:drawableStart="@drawable/ic_correo"
+        android:drawablePadding="8dp"
+        android:ems="10"
+        android:hint="@string/correo"
+        android:inputType="textEmailAddress"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <AutoCompleteTextView
+        android:id="@+id/pais_spinner"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="392dp"
+        android:layout_marginTop="32dp"
+        android:autoText="true"
+        android:background="@drawable/rounded_edittext"
+        android:drawableStart="@drawable/ic_pais"
+        android:drawablePadding="8dp"
+        android:ems="10"
+        android:hint="@string/pais"
+        android:imeOptions="actionSearch"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <AutoCompleteTextView
+        android:id="@+id/estado_spinner"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="392dp"
+        android:layout_marginTop="100dp"
+        android:autoText="true"
+        android:background="@drawable/rounded_edittext"
+        android:drawableStart="@drawable/ic_estado"
+        android:drawablePadding="8dp"
+        android:ems="10"
+        android:hint="@string/estado"
+        android:imeOptions="actionNext"
+        android:inputType="text"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <AutoCompleteTextView
+        android:id="@+id/ciudad_spinner"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="392dp"
+        android:layout_marginTop="168dp"
+        android:autoText="true"
+        android:background="@drawable/rounded_edittext"
+        android:drawableStart="@drawable/ic_ciudad"
+        android:drawablePadding="8dp"
+        android:ems="10"
+        android:hint="@string/ciudad"
+        android:imeOptions="actionNext"
+        android:inputType="text"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/siguiente1_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:background="@color/teal_200"
+        android:layout_marginBottom="16dp"
+        android:text="Siguiente"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
