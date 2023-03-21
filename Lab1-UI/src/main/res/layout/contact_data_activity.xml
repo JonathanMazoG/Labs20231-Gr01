@@ -60,7 +60,7 @@
         android:background="@drawable/rounded_edittext"
         android:textColor="#FFFFFF"/>
 
-    <Spinner
+    <AutoCompleteTextView
         android:id="@+id/pais_spinner"
         android:layout_width="300dp"
         android:layout_height="50dp"
@@ -78,7 +78,7 @@
         android:textColor="#FFFFFF"
         />
 
-    <AutoCompleteTextView
+    <Spinner
         android:id="@+id/ciudad_spinner"
         android:layout_width="300dp"
         android:layout_height="50dp"
