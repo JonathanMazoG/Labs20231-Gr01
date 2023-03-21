@@ -140,7 +140,20 @@ class ContactDataActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
             val datos1 = listOf(telefono, direccion, correo, pais, ciudad)
-            Log.d("ContactDataActivity", datos1.joinToString(", "))
+
+            Log.d("TAG", "------------------------------")
+            Log.d("TAG", "Información de contacto:")
+            Log.d("TAG", String.format("%-20s%s", "Teléfono:", telefono))
+
+            if(!direccion.isNullOrEmpty()) {
+                Log.d("TAG", String.format("%-20s%s", "Dirección:", direccion))
+            }
+            Log.d("TAG", String.format("%-20s%s", "Email:", correo))
+            Log.d("TAG", String.format("%-20s%s", "País:", pais))
+
+            if(!ciudad.isNullOrEmpty()) {
+                Log.d("TAG", String.format("%-20s%s", "Ciudad:", ciudad))
+            }
         }
     }
 
