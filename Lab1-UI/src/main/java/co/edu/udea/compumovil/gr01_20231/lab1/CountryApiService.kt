@@ -98,11 +98,6 @@ class CountryApiService {
             }
         }
 
-
-
-
-
-
         private class FetchCountriesAsyncTask(private val callback: (List<String>?, Exception?) -> Unit) : AsyncTask<Unit, Unit, Pair<List<String>?, Exception?>>() {
             override fun doInBackground(vararg params: Unit?): Pair<List<String>?, Exception?> {
                 val client = OkHttpClient()

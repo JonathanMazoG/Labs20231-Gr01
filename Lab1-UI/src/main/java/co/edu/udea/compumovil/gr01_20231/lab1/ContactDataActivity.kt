@@ -43,11 +43,7 @@ class ContactDataActivity : AppCompatActivity() {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                if (s.isNullOrEmpty()) {
-                    estadoAutoCompleteTextView.isEnabled = false
-                } else {
-                    estadoAutoCompleteTextView.isEnabled = true
-                }
+                estadoAutoCompleteTextView.isEnabled = !s.isNullOrEmpty()
             }
 
             override fun afterTextChanged(s: Editable?) {
@@ -59,11 +55,7 @@ class ContactDataActivity : AppCompatActivity() {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                if (s.isNullOrEmpty()) {
-                    ciudadAutoCompleteTextView.isEnabled = false
-                } else {
-                    ciudadAutoCompleteTextView.isEnabled = true
-                }
+                ciudadAutoCompleteTextView.isEnabled = !s.isNullOrEmpty()
             }
 
             override fun afterTextChanged(s: Editable?) {
