@@ -64,8 +64,8 @@ class PersonalDataActivity : AppCompatActivity() {
             nombres = nombresEditText.text.toString()
             apellidos = apellidosEditText.text.toString()
             when (sexoRadioGroup.checkedRadioButtonId) {
-                R.id.sexo_m_radiobutton -> sexo = getString(R.string.masculino)
-                R.id.sexo_f_radiobutton -> sexo = getString(R.string.femenino)
+                R.id.sexo_m_radiobutton -> sexo = "Masculino"
+                R.id.sexo_f_radiobutton -> sexo = "Femenino"
             }
             if (nombres.isEmpty()) {
                 nombresEditText.error = getString(R.string.errornombres)
